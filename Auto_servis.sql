@@ -36,7 +36,8 @@ Auto_mehanika varchar(50) not null,
 Auto_elektrika varchar(50)not null,
 Radni_sat decimal(18.2),
 cjena_radniSat decimal(18.2),
-opis varchar(200)
+opis varchar(200),
+placeno boolean not null
 );
 alter table djelatnik add foreign key (klijent) references klijent(sifra);
 alter table klijent add foreign key (usluga) references usluga(sifra);
@@ -51,8 +52,8 @@ select * from vozilo;
 
 insert  into vozilo (marka,tip_model,br_šasije,boja,U_prometu_od) values
 ('Volkswagen','Polo 1.4 variant','wvwzzz6ku1e557474','srebrena','2001-06-15');
-insert  into usluga (Auto_mehanika,Auto_elektrika,Radni_sat,cjena_radniSat,opis) values
-('1','1','2','200','montiranje alnasera i popravak kocnica');
+insert  into usluga (Auto_mehanika,Auto_elektrika,Radni_sat,cjena_radniSat,opis,placeno) values
+('1','1','2','200','montiranje alnasera i popravak kocnica',true);
 insert  into klijent (ime,prezime,vozilo,usluga) values
 ('Rade','Jasenovčanin',1,1);
 insert  into djelatnik (ime,prezime,iban,oib,klijent,vozilo,usluga) values
