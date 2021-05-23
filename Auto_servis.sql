@@ -28,7 +28,7 @@ marka varchar(100) not null,
 tip_model varchar(100),
 br_šasije varchar(50),
 boja varchar(50),
-U_prometu_od date
+u_prometu_od date
 );
 create table Usluga(
 sifra int not null primary key auto_increment,
@@ -47,7 +47,6 @@ usluga int
 );
 
 alter table klijent add foreign key (vozilo) references vozilo(sifra);
-alter table klijent add foreign key (usluga) references usluga(sifra);
 alter table djelatnik_vozilo_usluga add foreign key (vozilo) references vozilo(sifra);
 alter table djelatnik_vozilo_usluga add foreign key (djelatnik) references djelatnik(sifra);
 alter table djelatnik_vozilo_usluga add foreign key (usluga) references usluga(sifra);
@@ -59,11 +58,11 @@ select * from vozilo;
 select * from djelatnik_vozilo_usluga;
 
 #insert into vozilo
-insert  into vozilo (marka,tip_model,br_šasije,boja,U_prometu_od) values
+insert  into vozilo (marka,tip_model,br_šasije,boja,u_prometu_od) values
 ('Volkswagen','Polo 1.4 variant','wvwzzz6ku1e557474','srebrena','2001-06-15');
-insert  into vozilo (marka,tip_model,br_šasije,boja,U_prometu_od) values
+insert  into vozilo (marka,tip_model,br_šasije,boja,u_prometu_od) values
 ('yugo','coral','wvwzzz6ku1e557474','crvena','1990-06-15');
-insert  into vozilo (marka,tip_model,br_šasije,boja,U_prometu_od) values
+insert  into vozilo (marka,tip_model,br_šasije,boja,u_prometu_od) values
 ('audi','a4','wvwzzz6ku1e557474','crvena','2011-06-15');
 #insert into usluga
 insert  into Usluga (Auto_mehanika,Auto_elektrika,Radni_sat,cjena_radniSat,opis,placeno) values
