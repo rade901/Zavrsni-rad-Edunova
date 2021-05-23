@@ -11,7 +11,8 @@ ime varchar(50)not null,
 prezime varchar(50)not null,
 vozilo int not null,
 usluga int,
-kontakt varchar(100)
+kontakt varchar(100),
+vrijeme_dolaska datetime
 );
 create table djelatnik(
 sifra int not null primary key auto_increment,
@@ -19,8 +20,7 @@ ime varchar(50)not null,
 prezime varchar(50)not null,
 iban varchar(21),
 oib char(11),
-kontakt varchar(100),
-klijent int 
+kontakt varchar(100)
 );
 create table vozilo(
 sifra int not null primary key auto_increment,
@@ -39,34 +39,40 @@ cjena_radniSat decimal(18.2),
 opis varchar(200),
 placeno boolean not null
 );
+create table klijent_vozilo_usluga(
+sifra int not null primary key auto_increment,
+djelatnik int,
+vozilo int,
+usluga int
+);
 
-alter table djelatnik add foreign key (klijent) references klijent(sifra);
-alter table klijent add foreign key (usluga) references usluga(sifra);
 alter table klijent add foreign key (vozilo) references vozilo(sifra);
-
+alter table klijent_vozilo_usluga add foreign key (vozilo) references vozilo(sifra);
+alter table klijent_vozilo_usluga add foreign key (djelatnik) references djelatnik(sifra);
+alter table klijent_vozilo_usluga add foreign key (usluga) references usluga(sifra);
 
 select * from djelatnik;
 select * from klijent;
 select * from usluga;
 select * from vozilo;
 
-select cjena_radniSat,Auto_mehanika,marka,ime,prezime
-from klijent  a 
-inner join usluga b on b.sifra
-inner join vozilo c on c.sifra;
 
 insert  into vozilo (marka,tip_model,br_šasije,boja,U_prometu_od) values
 ('Volkswagen','Polo 1.4 variant','wvwzzz6ku1e557474','srebrena','2001-06-15');
 insert  into usluga (Auto_mehanika,Auto_elektrika,Radni_sat,cjena_radniSat,opis,placeno) values
 ('1','1','2','200','montiranje alnasera i popravak kocnica',true);
-insert  into klijent (ime,prezime,vozilo,usluga,kontakt) values
-('Rade','Jasenovčanin',1,1,'0983448665');
-insert  into djelatnik (ime,prezime,iban,oib,kontakt,klijent) values
-('Dusan','Ćoralić','hr9809444899547893745','98735467892','0993345566',1);
+insert  into klijent (ime,prezime,vozilo,usluga,kontakt,vrijeme_dolaska) values
+('Rade','Jasenovčanin',1,1,'0983448665','2008-11-11 13:23:44');
+insert  into djelatnik (ime,prezime,iban,oib,kontakt) values
+('Dusan','Ćoralić','hr9809444899547893745','98735467892','0993345566');
+insert  into klijent (ime,prezime,vozilo,usluga,kontakt,vrijeme_dolaska) values
+('Neko','Nešto',1,1,'0983448665','2008-11-11 13:23:44');
 
 UPDATE usluga
 SET Auto_mehanika = 'Kočnice', Auto_elektrika = 'Alnaser'
 WHERE sifra = 1;
+
+
 
 
 
