@@ -33,7 +33,7 @@ U_prometu_od date
 create table Usluga(
 sifra int not null primary key auto_increment,
 Auto_mehanika varchar(50) not null,
-Auto_elektrika varchar(50)not null,
+Auto_elektrika varchar(50) not null,
 Radni_sat decimal(18.2),
 cjena_radniSat decimal(18.2),
 opis varchar(200),
@@ -49,6 +49,11 @@ select * from djelatnik;
 select * from klijent;
 select * from usluga;
 select * from vozilo;
+
+select cjena_radniSat,Auto_mehanika,marka,ime,prezime
+from klijent  a 
+inner join usluga b on b.sifra
+inner join vozilo c on c.sifra;
 
 insert  into vozilo (marka,tip_model,br_šasije,boja,U_prometu_od) values
 ('Volkswagen','Polo 1.4 variant','wvwzzz6ku1e557474','srebrena','2001-06-15');
