@@ -32,9 +32,9 @@ u_prometu_od date
 );
 create table Usluga(
 sifra int not null primary key auto_increment,
-Auto_mehanika varchar(50) not null,
-Auto_elektrika varchar(50) not null,
-Radni_sat decimal(18.2),
+auto_mehanika varchar(50) not null,
+auto_elektrika varchar(50) not null,
+radni_sat decimal(18.2),
 cjena_radniSat int not null,
 opis varchar(200),
 placeno bit not null
@@ -65,7 +65,7 @@ insert  into vozilo (marka,tip_model,br_šasije,boja,u_prometu_od) values
 insert  into vozilo (marka,tip_model,br_šasije,boja,u_prometu_od) values
 ('audi','a4','wvwzzz6ku1e557474','crvena','2011-06-15');
 #insert into usluga
-insert  into Usluga (Auto_mehanika,Auto_elektrika,Radni_sat,cjena_radniSat,opis,placeno) values
+insert  into Usluga (auto_mehanika,auto_elektrika,radni_sat,cjena_radniSat,opis,placeno) values
 ('zglobovi','akumulator',1,'200','montiranje zglobova i ugradnja akumulatora',true);
 insert  into Usluga (Auto_mehanika,Auto_elektrika,Radni_sat,cjena_radniSat,opis,placeno) values
 ('lezajevi','instalacije',1,'200','montiranje lezajeva i ugradnja instalacija',true);
