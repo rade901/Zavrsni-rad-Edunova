@@ -37,9 +37,9 @@ klijent int
 );
 create table usluga(
 sifra int not null primary key auto_increment,
+opis varchar(250),
 radni_sat decimal(18.2),
-cjena_radni_sat int not null,
-opis varchar(50)
+cjena_radni_sat varchar(50) not null
 );
 create table auto_servis(
 sifra int not null primary key auto_increment,
@@ -51,13 +51,15 @@ datum date
 create table servis(
 sifra int not null primary key auto_increment,
 usluga int,
-placeno bit not null
+placeno bit not null,
+djelatnik int not null
 );
 alter table auto_servis add foreign key (vozilo) references vozilo(sifra);
 alter table auto_servis add foreign key (servis) references servis(sifra);
 alter table vozilo add foreign key (klijent) references klijent(sifra);
 alter table auto_servis add foreign key (djelatnik) references djelatnik(sifra);
 alter table servis add foreign key (usluga) references usluga(sifra);
+alter table servis add foreign key (djelatnik)references djelatnik(sifra);
 
 
 select * from djelatnik;
