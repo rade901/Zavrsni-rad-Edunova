@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    background-color: rgb(255, 0, 0);
+}
+
+.container {
+    display: grid;
+    height: 200vh;
+    grid-template-columns: 0.5fr 2fr 2fr 2fr;
+    grid-template-rows: 0.6fr 1.4fr 1.2fr 2.5fr 3fr 1fr 1fr 2.5fr 0.5fr;
+    grid-template-areas: "nav nav nav nav" "section section section section" "content1 content1 content2 content3" "content1 content1 content2 content3" "content4 content4 content5 content6" "content4 content4 content5 content6" "content7 content7 content8 content9" "content7 content7 content8 content9" "footer footer footer footer";
+    grid-gap: 0.1rem;
+}
+
+@media only screen and (max-width:550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.9fr 0.4fr 2.2fr 1.2fr 1.2fr;
+        grid-template-areas: "nav" "section" "section" "content1" "content2" "content3" "content4" "content5" "content6" "content7" "content8" "content9" "footer";
+    }
+}
+
+nav {
+    background-color: rgb(0, 0, 0);
+    grid-area: nav;
+    text-align: center;
+    color: gold;
+}
+
+section {
+    background-color: rgb(0, 0, 0);
+    grid-area: section;
+    color: goldenrod;
+    padding-left: 150px;
+}
+
+#content1 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content1;
+    color: goldenrod;
+    padding-left: 150px;
+}
+
+#content2 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content2;
+    color: goldenrod;
+    padding-left: 150px;
+}
+
+#content3 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content3;
+    color: goldenrod;
+    padding-left: 150px;
+}
+
+#content4 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content4;
+    color: goldenrod;
+}
+
+#content5 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content5;
+    color: goldenrod;
+    padding-left: 150px;
+}
+
+#content6 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content6;
+    color: goldenrod;
+    padding-left: 150px;
+}
+
+#content7 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content7;
+    color: goldenrod;
+}
+
+#content8 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content8;
+    color: goldenrod;
+}
+
+#content9 {
+    background-color: rgb(0, 0, 0);
+    grid-area: content9;
+    color: goldenrod;
+}
+
+footer {
+    background-color: rgb(0, 0, 0);
+    grid-area: footer;
+    color: goldenrod;
+}
+
+#menu {
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    cursor: pointer;
+}
+
+.bar {
+    height: 5px;
+    width: 100%;
+    background-color: #ff0000;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+#bar1 {
+    transform: translateY(-4px);
+}
+
+#bar3 {
+    transform: translateY(4px);
+}
+
+.nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    font-weight: bold;
+}
+
+.nav li {
+    list-style: none;
+    padding: 16px 0;
+}
+
+.nav {
+    padding: 0;
+    margin: 0 20px;
+    transition: 0.3s ease;
+    display: none;
+}
+
+.menu-bg,
+#menu-bar {
+    top: 50px;
+    right: 30px;
+    position: fixed;
+}
+
+.menu-bg {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background: radial-gradient(circle, #fa0303, #000000);
+    border-radius: 100%;
+    transition: 0.3s ease;
+}
+
+#menu-bar {
+    z-index: 2;
+}
+
+.change-bg {
+    width: 550px;
+    height: 340px;
+    transform: translate(-60%, -20% -60%);
+}
+
+.change .bar {
+    background-color: white;
+}
+
+.change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar3 {
+    transform: translateY(-6px) rotate(45deg);
+}
+
+.change #bar2 {
+    opacity: 0;
+}
+
+.change {
+    display: block;
+}
+.trazilica{
+    position: fixed;
+    top: 50px;
+    right: 20px;
+}
+.nav h1{
+    text-align: center;
+}
+.btn1{
+    margin-top: 10px;
+}
