@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+    color:black;
+}
+textarea{
+    resize: none;
+}
+h1{
+    text-align: center;
+}
+
+body{
+    margin: 20px;
+    padding: 0;
+    background-color: silver;
+    
+    
+}
+.usluga{
+    position: absolute;
+    top: 460px;
+    left: 500px;  
+}
+.djelatnik{
+    position: absolute;
+    top: 70px;
+ }
+.vozilo{
+    position: absolute;
+    top: 460px;
+    left: 250px;   
+}
+.klijent{
+    position: absolute;
+    top: 460px;
+      
+}
+h2,h1{
+    border-bottom: black 1px solid ;
+}
+h1{
+    background-color: rgb(0, 0, 0);
+    color: rgb(226, 193, 3);
+    border-radius: 20px;
+}
+.trazilica{
+position: absolute;
+right: 30px; 
+}
+.btn{
+    position: absolute;
+    bottom: 80px;
+    width: 100px;
+    height: 40px;
+}
